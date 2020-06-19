@@ -1,0 +1,1 @@
+# SwiftInfo GitHub Action
