@@ -1,0 +1,15 @@
+name: SwiftInfo
+description: Run SwiftInfo on your repository and receive the results as a PR comment
+author: Pixel Foundry
+inputs:
+  token:
+    description: The GITHUB_TOKEN secret
+outputs:
+  swiftinfo-output:
+    description: The output of the SwiftInfo command
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: package
+  color: orange
