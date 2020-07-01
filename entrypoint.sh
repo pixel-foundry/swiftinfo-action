@@ -8,11 +8,7 @@ function stripSwiftInfoExtras() {
     sed -E "/.*^\* .*/d"
 }
 
-function addEscapedNewlines() {
-    sed -E "s/$/\\\\n/"
-}
-
-SWIFTINFO_OUTPUT="$(swiftinfo -v | stripPWD | stripSwiftInfoExtras | addEscapedNewlines)"
+SWIFTINFO_OUTPUT="$(swiftinfo -v | stripPWD | stripSwiftInfoExtras)"
 SWIFTINFO_OUTPUT="${SWIFTINFO_OUTPUT:-SwiftInfo run failed; see Action log}"
 
 echo "::set-output name=swiftinfo-output::"$SWIFTINFO_OUTPUT""
